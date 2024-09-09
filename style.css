@@ -158,6 +158,8 @@ header {
   border: 2px solid #2944d9;
 }
 
+/* Media querie */
+
 @media screen and (max-width: 576px) {
   .our-team-section {
     background-color: #2944d9;
