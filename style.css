@@ -148,9 +148,13 @@ header {
 
 .our-team-section {
   background-color: #fb3b24;
-  height: 100vh;
+  padding: 40px;
   color: #f3f2f1;
   text-align: center;
+}
+
+.team-member {
+  border-radius: 60px 60px 0 0;
 }
 
 .team-member img {
@@ -170,23 +174,54 @@ header {
 }
 
 .team-subtitle {
-  padding: 40px;
+  padding: 0 60px;
 }
 
 .team-member {
   margin: 1em;
   box-shadow: 0 0 5px #262727;
   background-color: #f3f2f1;
+  color: #262727;
 }
 
 .our-team-list {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 1em;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+.team-member-name {
+  padding: 10px 10px 5px 10px;
+}
+
+.team-member-position {
+  padding: 5px 10px 10px 10px;
+}
+
 /* Footer */
 
 footer {
-  height: 10vh;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 30vh;
+  background-color: #262727;
+  color: #fb3b24;
+  font-weight: 400;
+  padding: 60px;
+}
+
+.op-hours {
+  font-size: 1em;
+  color: #f3f2f1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.op-hours-container {
+  font-size: 0.8em;
 }
