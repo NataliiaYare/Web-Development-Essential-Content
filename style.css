@@ -155,6 +155,17 @@ header {
 
 .team-member {
   border-radius: 60px 60px 0 0;
+  border: 2px solid #2944d9;
+}
+
+@media screen and (max-width: 576px) {
+  .our-team-section {
+    background-color: #2944d9;
+  }
+
+  .team-member {
+    border: 2px solid #fb3b24;
+  }
 }
 
 .team-member img {
