@@ -207,11 +207,10 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  height: 30vh;
   background-color: #262727;
   color: #fb3b24;
   font-weight: 400;
-  padding: 60px;
+  padding: 40px;
 }
 
 .op-hours {
