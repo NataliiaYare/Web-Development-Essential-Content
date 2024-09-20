@@ -13,6 +13,10 @@
   list-style: none;
 }
 
+a {
+  color: inherit;
+}
+
 body {
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
@@ -29,7 +33,16 @@ img {
 }
 
 /* Header */
+.header-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #262727;
+  color: #f3f2f1;
+}
 
+/* 
 header {
   display: flex;
   flex-direction: column;
@@ -43,7 +56,7 @@ header {
   background-color: #262727;
   justify-content: center;
   align-items: center;
-}
+} */
 
 .logo {
   font-family: "Permanent Marker", cursive;
@@ -55,11 +68,73 @@ header {
 }
 
 .nav-list {
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.nav-list li {
+  margin: 1 15px;
+}
+
+.nav-list a {
+  text-decoration: none;
+  color: #f3f2f1;
+}
+
+/* Mobile menu styles */
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+}
+
+/* Responsive styles */
+
+@media (max-width: 768px) {
+  .nav-list {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .nav-list.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+
+/* .nav-list {
   display: flex;
   gap: 30px;
   color: #f3f2f1;
   font-size: 0.9em;
+  position: relative;
 }
+
+.hamburger {
+  font-size: 40px;
+  color: #fb3b24;
+  position: absolute;
+  right: 10px;
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (max-width: 576px) {
+  .nav-list {
+    display: none;
+  }
+} */
 
 /* Hero section */
 
