@@ -1,12 +1,15 @@
 // console.log("Script Loaded");
 
-// // form nvalidation
+// // form validation
 
 // function validateForm() {
 //   // reset previous error messages
 //   document.getElementById("nameError").textContent = "";
 //   document.getElementById("emailError").textContent = "";
 //   document.getElementById("messageError").textContent = "";
+
+//   // new part
+//   let isValid = true;
 
 //   // get form values
 //   // The trim() function in JS is used to remove whitespace (spaces, tabs, and newlines) from both the beginning and the end of string. It is often used to clean up input or to remove unnecessary whitespace.
@@ -15,157 +18,106 @@
 //   let message = document.getElementById("message").value.trim();
 
 //   // validate name
-//   if (name === "") {
-//     document.getElementById("nameError").textContent = "Name is required";
-//     return false;
-//   }
-
 //   // regular expression too check if the name contains only letters
-//   let namePattern = /^[a-zA-Z\s]+$/;
-
-//   //
+//   let namePattern = /^[a-zA-Z]+ [a-zA-Z]+$/;
 //   if (!namePattern.test(name)) {
-//     document.getElementById("nameError").textContent = "Only letters allowed";
-//     return false; // You need to return false here to stop form submission
-//   }
-
-//   // counts the number of words
-//   let wordCount = name.trim().split(/\s+/).length;
-
-//   if (wordCount < 2) {
 //     document.getElementById("nameError").textContent =
-//       "Name must have at least two words";
-//     return false;
+//       "Name must contain only letters and have at least two words";
+//     isValid = false;
 //   }
 
-//   // Validate email
-//   let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-//   if (!emailRegex.test(email)) {
+//   // Email validation
+//   let emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+//   if (!emailPattern.test(email)) {
 //     document.getElementById("emailError").textContent = "Invalid email address";
-//     return false;
+//     isValid = false;
 //   }
 
 //   // Validate message
 //   if (message === "") {
 //     document.getElementById("messageError").textContent = "Message is required";
-//     return false;
+//     isValid = false;
+//   }
+//   if (isValid) {
+//     window.location.href = "confirmation.html";
 //   }
 
-//   // Form is valid, save data to local storage
-//   saveDataLocally(name, email, message);
+//   return isValid;
 
-//   // If form is valid, save data and redirect
-//   window.location.href = "./confirmation.html";
-//   return false;
+//   //   // Form is valid, save data to local storage
+//   //   saveDataLocally(name, email, message);
 
-//   // Prevent the form from submitting traditionally
+//   //   // If form is valid, save data and redirect
+//   //   window.location.href = "./confirmation.html";
+//   //   return false;
+
+//   //   // Prevent the form from submitting traditionally
+//   // }
+
+//   // function saveDataLocally(name, email, message) {
+//   //   // Create an object to represent the form data
+//   //   let formData = {
+//   //     name: name,
+//   //     email: email,
+//   //     message: message,
+//   //   };
+
+//   //   // Convert the object to a JSON string and save to local storage
+//   //   localStorage.setItem("formData", JSON.stringify(formData));
 // }
-
-// function saveDataLocally(name, email, message) {
-//   // Create an object to represent the form data
-//   let formData = {
-//     name: name,
-//     email: email,
-//     message: message,
-//   };
-
-//   // Convert the object to a JSON string and save to local storage
-//   localStorage.setItem("formData", JSON.stringify(formData));
-// }
-
-function Nav() {
-  let mobileClick = document.getElementById("mobile_click");
-  let mobileNav = document.querySelector("#mobile_nav");
-
-  mobileClick.addEventListener("click", () => {
-    mobileNav.classList.toggle("active");
-  });
-}
-Nav();
-
-// form validation
-// validation
 function validateForm() {
-  // Reset previous error messages
+  // Clear previous error messages
   document.getElementById("nameError").textContent = "";
   document.getElementById("emailError").textContent = "";
   document.getElementById("messageError").textContent = "";
 
+  let isValid = true;
+
   // Get form values
-  // The trim() function in JavaScript is used to remove whitespace (spaces, tabs, and newlines) from both the beginning and the end of a string. It is often used to clean up user input or to remove unnecessary whitespace
-  var name = document.getElementById("name").value.trim();
-  var email = document.getElementById("email").value.trim();
-  var message = document.getElementById("message").value.trim();
+  const name = document.getElementById("name").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const message = document.getElementById("message").value.trim();
 
-  // Validate name
+  console.log("Name:", name);
+  console.log("Email:", email);
+  console.log("Message:", message);
 
-  // Validate name
-  if (name === "") {
-    document.getElementById("nameError").textContent = "Name is required";
-    return false;
-  }
-
-  // Regular expression to check if the name contains only letters
-  var namePattern = /^[a-zA-Z ]+$/;
-
+  // Name validation: Allow letters, apostrophes, hyphens, and at least two words
+  const namePattern = /^[a-zA-Z]+([ '-][a-zA-Z]+)* [a-zA-Z]+([ '-][a-zA-Z]+)*$/;
   if (!namePattern.test(name)) {
     document.getElementById("nameError").textContent =
-      "Name must contain only letters";
-    return false;
+      "Name must contain only letters, and at least two words";
+    isValid = false;
+    console.log("Name validation failed");
   }
 
-  // Counts the number of words
-  var wordCount = name.trim().split(/\s+/).length;
-
-  if (wordCount < 2) {
-    document.getElementById("nameError").textContent =
-      "Name must have at least two words";
-    return false;
-  }
-
-  // Validate email
-  var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailRegex.test(email)) {
+  // Email validation: simple regex to check the format of the email
+  const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  if (!emailPattern.test(email)) {
     document.getElementById("emailError").textContent = "Invalid email address";
-    return false;
+    isValid = false;
+    console.log("Email validation failed");
   }
 
-  // Validate message
+  // Message validation: field must not be empty
   if (message === "") {
     document.getElementById("messageError").textContent = "Message is required";
-    return false;
+    isValid = false;
+    console.log("Message validation failed");
   }
 
-  // Form is valid, save data to local storage
-  saveDataLocally(name, email, message);
+  // If the form is valid, redirect to the confirmation page
+  if (isValid) {
+    console.log("Form is valid. Redirecting...");
+    window.location.href = "confirmation.html"; // Redirect to confirmation page
+  } else {
+    console.log("Form is invalid. No redirect.");
+  }
 
-  // Redirect to confirmation.html
-  window.location.href = "confirmation.html";
-
-  return false; // Prevent the form from submitting traditionally
+  // Prevent form submission if validation fails
+  return isValid;
 }
 
-function saveDataLocally(name, email, message) {
-  // Create an object to represent the form data
-  var formData = {
-    name: name,
-    email: email,
-    message: message,
-  };
-
-  // Convert the object to a JSON string and save to local storage
-  localStorage.setItem("formData", JSON.stringify(formData));
-}
-///////////////////////////////////// returning data from local storage to confirmation page ////////////////////////////////////////
-
-// Retrieve data from local storage
-var storedData = localStorage.getItem("formData");
-// Display the stored data
-if (storedData) {
-  var parsedData = JSON.parse(storedData);
-  document.getElementById("storedName").textContent = parsedData.name;
-  document.getElementById("storedEmail").textContent = parsedData.email;
-  document.getElementById("storedMessage").textContent = parsedData.message;
-} else {
-  document.getElementById("storedData").textContent = "No data stored.";
-}
+document.getElementById("myButton").addEventListener("click", function () {
+  alert("Button was clicked!");
+});
