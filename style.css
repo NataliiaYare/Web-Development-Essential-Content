@@ -33,14 +33,6 @@ img {
 }
 
 /* Header */
-.header-navigation {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-  background-color: #262727;
-  color: #f3f2f1;
-}
 
 /* 
 header {
@@ -65,21 +57,6 @@ header {
   font-size: 2em;
   color: #fb3b24;
   margin: 10px 0 10px 0;
-}
-
-.nav-list {
-  margin: 0;
-  padding: 0;
-  display: flex;
-}
-
-.nav-list li {
-  margin: 1 15px;
-}
-
-.nav-list a {
-  text-decoration: none;
-  color: #f3f2f1;
 }
 
 /* Mobile menu styles */
@@ -112,7 +89,7 @@ header {
   justify-content: center;
   align-items: center;
   text-align: center;
-  font-size: 3rem;
+  font-size: 1.5rem;
   transition: 0.4s ease;
 }
 
@@ -137,7 +114,7 @@ nav {
 
 .ham-menu span {
   height: 5px;
-  width: 100%;
+  width: 80%;
   background-color: #fb3b24;
   border-radius: 25px;
   position: absolute;
@@ -170,47 +147,58 @@ nav {
   top: 50%;
   transform: translate(-50%, -50%) rotate(-45deg);
 }
-
 /* Responsive styles */
-
-@media (max-width: 768px) {
-  .nav-list {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .nav-list.active {
+@media (min-width: 756px) {
+  .header-navigation {
     display: flex;
+    flex-direction: row-reverse;
+    justify-content: baseline;
+    /* justify-items: flex-start; */
+    /* align-items: center; */
+    padding: 10px 20px;
+    background-color: #262727;
   }
 
-  .hamburger {
-    display: block;
+  .logo {
+    margin-left: 20px;
   }
-}
 
-/* .nav-list {
-  display: flex;
-  gap: 30px;
-  color: #f3f2f1;
-  font-size: 0.9em;
-  position: relative;
-}
-
-.hamburger {
-  font-size: 40px;
-  color: #fb3b24;
-  position: absolute;
-  right: 10px;
-  display: flex;
-  align-items: center;
-}
-
-@media screen and (max-width: 576px) {
-  .nav-list {
+  /* Hide the hamburger menu on larger screens */
+  .ham-menu {
     display: none;
   }
-} */
+
+  /* Full-screen navigation */
+  .off-screen-menu {
+    position: static;
+    display: flex;
+    height: auto;
+    max-width: none;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    background-color: transparent;
+    transition: none;
+  }
+
+  .off-screen-menu ul {
+    display: flex;
+    gap: 20px;
+  }
+
+  .off-screen-menu ul li a {
+    font-size: 1rem;
+    color: #f3f2f1;
+    text-decoration: none;
+    padding: 10px;
+  }
+
+  /* Styling the links on hover */
+  .off-screen-menu ul li a:hover {
+    background-color: #fb3b24;
+    color: #fff;
+    border-radius: 5px;
+  }
+}
 
 /* Hero section */
 
