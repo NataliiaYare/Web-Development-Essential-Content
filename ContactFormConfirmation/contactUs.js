@@ -73,7 +73,7 @@ function validateForm() {
 
   let isValid = true;
 
-  // Get form values
+  // Get form values and use trim() function to remove whitespace
   const name = document.getElementById("name").value.trim();
   const email = document.getElementById("email").value.trim();
   const message = document.getElementById("message").value.trim();
@@ -106,6 +106,10 @@ function validateForm() {
     console.log("Message validation failed");
   }
 
+  // Form is valid, save data to local storage
+
+  saveDataLocally(name, email, message);
+
   // If the form is valid, redirect to the confirmation page
   if (isValid) {
     console.log("Form is valid. Redirecting...");
@@ -116,8 +120,30 @@ function validateForm() {
 
   // Prevent form submission if validation fails
   return isValid;
-}
 
-document.getElementById("myButton").addEventListener("click", function () {
-  alert("Button was clicked!");
-});
+  function saveDataLocally(name, email, message) {
+    // Create an object to represent the form data
+
+    let formData = {
+      name: name,
+      email: email,
+      message: message,
+    };
+
+    // Convert the object to a JSON string and save to local storage
+    localStorage.setItem.getItem("formData", JSON.stringify(formData));
+
+    // Retrieve datafrom local storage
+    let storedData = localStorage.getItem("formData");
+
+    // Display the stored data
+    if (storedData) {
+      let parsedData = JSON.parse(storedData);
+      document.getElementById("storedName").textContent = parsedData.name;
+      document.getElementById("storedEmail").textContent = parsedData.email;
+      document.getElementById("storedMessage").textContent = parsedData.message;
+    } else {
+      document.getElementById("storedData").textContent = "No data stored.";
+    }
+  }
+}
