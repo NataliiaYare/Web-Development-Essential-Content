@@ -143,46 +143,107 @@
         </ul>
     </section>
 
-    <!-- 
-<section class="contact-us">
-    <h2>Contact us</h2>
-    <form action="">
-        <div>
-            <label for="name">Enter your name</label>
-            <input type="text" id="name" placeholder="eg:joe bloggs" minlength="5" maxlength="80" name="name" required>
-        </div>
-        <div>
-            <label for="email">Enter your email</label>
-            <input type="email" id="email" placeholder="eg: joe@example.com" minlength="5" maxlength="80" required>
-        </div>
-        <div>
-            <label for="message">Enter your message</label>
-            <textarea id="message" cols="30" rows="10" minlength="20" maxlength="500" required></textarea>
-        </div>
-        <button type="submit">Send message</button>
-    </form>
+    <section class="contact-us">
+        <h2>Contact us</h2>
+        <form id="myForm" action="" onsubmit="return validateForm()">
+            <div>
+                <label for="name">Enter your name</label>
+                <input type="text" id="name" placeholder="eg:joe bloggs" name="name" required>
+                <span id="nameError" class="error"></span>
+            </div>
+            <div>
+                <label for="email">Enter your email</label>
+                <input type="email" id="email" placeholder="eg: joe@example.com" required>
+                <span id="emailError" class="error"></span>
+            </div>
+            <div>
+                <label for="message">Enter your message</label>
+                <textarea id="message" cols="30" rows="10" required></textarea>
+                <span id="messageError" class="error"></span>
+            </div>
+            <button type="submit">Send message</button>
+        </form>
 
 
-</section> -->
+    </section>
 
     <!-- Footer -->
 
     <footer>
+        <div class="footer-container">
 
-        <address>Kostiantynivska St, 20/14, Kyiv, Ukraine, 02000</address>
-
-        <div class="op-hours">
-            <p class="op-hours-title">Opening Hours</p>
-            <div class="op-hours-container">
-                <p>Mon to Fri: 7am to 7pm</p>
-                <p> Sat & Sun: 8am to 7pm</p>
+            <!-- Contact Section -->
+            <div class="contact-info">
+                <address class="address" aria-label="Our address">
+                    Kostiantynivska St, 20/14, Kyiv, Ukraine, 02000
+                </address>
+                <ul class="contact-links">
+                    <li class="call"><a href="tel:+1234567890">Phone: +123 456 7890</a></li>
+                    <li class="sms"><a href="sms:+1234567890">Send us an SMS</a></li>
+                    <li class="email"><a href="mailto:info@kavusia.com">Email: info@yogasite.com</a></li>
+                </ul>
             </div>
+
+            <!-- Opening Hours Section -->
+            <div class="op-hours">
+                <p class="op-hours-title">Opening Hours</p>
+                <div class="op-hours-container">
+                    <p>Mon to Fri: 7am to 7pm</p>
+                    <p>Sat & Sun: 8am to 7pm</p>
+                </div>
+            </div>
+
+            <!-- Social Media Links Section -->
+            <div class="soc-media">
+                <p class="social-media-paragraph">Follow us</p>
+                <ul class="soc-media-list-footer">
+                    <li class="soc-media-footer">
+                        <a href="https://www.instagram.com/topcoffeelovers/?hl=en-gb" class="social-list-link-footer"
+                            aria-label="Instagram">
+                            <svg class="soc-list-icon-footer" width="24" height="24">
+                                <use href="./images/icons.svg#icon-instagram-2"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="soc-media-footer">
+                        <a href="https://www.facebook.com/p/Coffee-Lovers-100068637200329/"
+                            class="social-list-link-footer" aria-label="Facebook">
+                            <svg class="soc-list-icon-footer" width="24" height="24">
+                                <use href="./images/icons.svg#icon-facebook-1"></use>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Site Map Section -->
+            <div class="site-map">
+                <p class="site-map-title">Site Map</p>
+                <ul class="site-map-list">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#classes">Classes</a></li>
+                    <li><a href="#schedule">Schedule</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+
         </div>
 
-        &copy; 2024 Nataliia Yareshko
+        <!-- Embedded Map Section -->
+        <div class="map-container">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2530.295987306982!2d30.51052511590675!3d50.46984227947857!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4cf1d32d4f1b1%3A0xd477be2a2af64613!2sKostiantynivska%20St%2C%2020%2F14%2C%20Kyiv%2C%20Ukraine%2C%2002000!5e0!3m2!1sen!2sua!4v1607622873638!5m2!1sen!2sua"
+                width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy">
+            </iframe>
+        </div>
 
+        <p class="copy">&copy; 2024 Nataliia Yareshko</p>
     </footer>
-    <script src="./script.js"></script>
+
+    <script src=" ./script.js">
+    </script>
+    <script src="./contactUs.js"></script>
 
 
 

@@ -34,22 +34,6 @@ img {
 
 /* Header */
 
-/* 
-header {
-  display: flex;
-  flex-direction: column;
-}
-
-.header-navigation {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 15vh;
-  background-color: #262727;
-  justify-content: center;
-  align-items: center;
-} */
-
 .logo {
   font-family: "Permanent Marker", cursive;
   font-weight: 600;
@@ -153,8 +137,6 @@ nav {
     display: flex;
     flex-direction: row-reverse;
     justify-content: baseline;
-    /* justify-items: flex-start; */
-    /* align-items: center; */
     padding: 10px 20px;
     background-color: #262727;
   }
@@ -353,16 +335,92 @@ nav {
   padding: 5px 10px 10px 10px;
 }
 
+/* contact form */
+.contact-us {
+  padding: 32px;
+  text-align: center;
+  background-color: #ffffff;
+}
+
+.contact-us h2 {
+  margin-bottom: 20px;
+}
+
+#myForm {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+#myForm label {
+  margin: 10px 0 5px;
+  font-size: 16px;
+}
+
+#myForm input,
+#myForm textarea {
+  padding: 10px;
+
+  border: 1px solid;
+  border-radius: 4px;
+  font-size: 14px;
+  width: 100%;
+}
+
+#myForm input {
+  height: 40px;
+}
+
+#myForm textarea {
+  resize: none;
+}
+
+#myForm button {
+  margin-top: 20px;
+  padding: 12px;
+  background-color: #fb3b24;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  color: #ffffff;
+}
+
+#myForm button:hover {
+  background-color: #2944d9;
+}
+
+/* contact form styles end */
+
 /* Footer */
 
 footer {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+  background-color: #262727;
+}
+
+.footer-container {
   background-color: #262727;
   color: #fb3b24;
-  font-weight: 400;
-  padding: 40px;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  text-align: center;
+}
+
+@media (min-width: 1158px) {
+  .footer-container {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .adress {
+    max-width: 150px;
+  }
+
+  .copy {
+    padding-left: 80px;
+  }
 }
 
 .op-hours {
@@ -375,4 +433,86 @@ footer {
 
 .op-hours-container {
   font-size: 0.8em;
+}
+
+.social-media-paragraph {
+  color: #ffffff;
+  font-size: 1em;
+  margin-bottom: 16px;
+}
+
+.contact-info,
+.op-hours,
+.soc-media,
+.site-map {
+  margin-bottom: 15px;
+  max-width: 200px;
+}
+
+.contact-links {
+  list-style: none;
+  padding: 0;
+}
+
+.contact-links li a {
+  color: #ffffff;
+  text-decoration: none;
+  display: block;
+  margin: 5px 0;
+}
+
+.soc-media-list-footer {
+  display: flex;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+  justify-content: center;
+}
+
+.site-map-list {
+  list-style: none;
+  padding: 0;
+}
+
+.site-map-list li {
+  margin-bottom: 5px;
+}
+
+.site-map-list li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.map-container iframe {
+  border-radius: 8px;
+}
+
+.copy {
+  text-align: center;
+  font-size: 0.9rem;
+  margin-top: 10px;
+}
+
+.map-container {
+  grid-column: span 3;
+}
+
+.soc-media-list-footer {
+  display: flex;
+  gap: 16px;
+}
+
+.soc-list-icon-footer {
+  fill: #f4f4fd;
+}
+
+.social-list-link-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #fb3b24;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
