@@ -26,7 +26,7 @@
 <body>
     <!-- Header and navigation -->
 
-    <header class="header-navigation">
+    <header class="header-navigation" id="home">
 
         <div class="off-screen-menu">
             <ul>
@@ -65,7 +65,7 @@
 
     <!-- Our news -->
 
-    <section class="news-section">
+    <section class="news-section" id="news">
 
         <p class="news-title">Kavusia news</p>
         <ul class="news-list">
@@ -113,7 +113,7 @@
 
     <!-- Our team section -->
 
-    <section class="our-team-section">
+    <section class="our-team-section" id="baristas">
         <p class="team-title">Best coffee makers</p>
         <p class="team-subtitle">Our team is united by shared commitment to exellence and passion for what we do. We're
             here to serve you and make your experience with us exceptional in every way. </p>
@@ -143,7 +143,7 @@
         </ul>
     </section>
 
-    <section class="contact-us">
+    <section class="contact-us" id="contact">
         <h2>Contact us</h2>
         <form id="myForm" action="" onsubmit="return validateForm()">
             <div>
@@ -180,7 +180,7 @@
                 <ul class="contact-links">
                     <li class="call"><a href="tel:+1234567890">Phone: +123 456 7890</a></li>
                     <li class="sms"><a href="sms:+1234567890">Send us an SMS</a></li>
-                    <li class="email"><a href="mailto:info@kavusia.com">Email: info@yogasite.com</a></li>
+                    <li class="email"><a href="mailto:info@kavusia.com">Email: info@kavusia.com</a></li>
                 </ul>
             </div>
 
@@ -188,8 +188,8 @@
             <div class="op-hours">
                 <p class="op-hours-title">Opening Hours</p>
                 <div class="op-hours-container">
-                    <p>Mon to Fri: 7am to 7pm</p>
-                    <p>Sat & Sun: 8am to 7pm</p>
+                    <p class="op-days">Mon to Fri: 7am to 7pm</p>
+                    <p class="op-days">Sat & Sun: 8am to 7pm</p>
                 </div>
             </div>
 
@@ -198,16 +198,16 @@
                 <p class="social-media-paragraph">Follow us</p>
                 <ul class="soc-media-list-footer">
                     <li class="soc-media-footer">
-                        <a href="https://www.instagram.com/topcoffeelovers/?hl=en-gb" class="social-list-link-footer"
-                            aria-label="Instagram">
+                        <a href="https://www.instagram.com/topcoffeelovers/?hl=en-gb" target="_blank"
+                            rel="noopener noreferrer" class="social-list-link-footer" aria-label="Instagram">
                             <svg class="soc-list-icon-footer" width="24" height="24">
                                 <use href="./images/icons.svg#icon-instagram-2"></use>
                             </svg>
                         </a>
                     </li>
                     <li class="soc-media-footer">
-                        <a href="https://www.facebook.com/p/Coffee-Lovers-100068637200329/"
-                            class="social-list-link-footer" aria-label="Facebook">
+                        <a href="https://www.facebook.com/p/Coffee-Lovers-100068637200329/" target="_blank"
+                            rel="noopener noreferrer" class="social-list-link-footer" aria-label="Facebook">
                             <svg class="soc-list-icon-footer" width="24" height="24">
                                 <use href="./images/icons.svg#icon-facebook-1"></use>
                             </svg>
@@ -221,9 +221,8 @@
                 <p class="site-map-title">Site Map</p>
                 <ul class="site-map-list">
                     <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#classes">Classes</a></li>
-                    <li><a href="#schedule">Schedule</a></li>
+                    <li><a href="#news">News</a></li>
+                    <li><a href="#baristas">Our baristas</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>

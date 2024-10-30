@@ -397,48 +397,39 @@ nav {
 
 footer {
   background-color: #262727;
-}
-
-.footer-container {
-  background-color: #262727;
   color: #fb3b24;
-  margin-bottom: 40px;
-  display: flex;
-  flex-direction: column;
-  padding: 30px;
+  padding: 30px 0;
   text-align: center;
 }
 
-@media (min-width: 1158px) {
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+/* Flex alignment for larger screens */
+@media (min-width: 756px) {
   .footer-container {
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
+    align-items: baseline;
+    text-align: left;
   }
-  .adress {
-    max-width: 150px;
+
+  .contact-info,
+  .op-hours,
+  .soc-media,
+  .site-map {
+    margin-bottom: 0;
   }
 
   .copy {
     padding-left: 80px;
   }
-}
-
-.op-hours {
-  font-size: 1em;
-  color: #f3f2f1;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.op-hours-container {
-  font-size: 0.8em;
-}
-
-.social-media-paragraph {
-  color: #ffffff;
-  font-size: 1em;
-  margin-bottom: 16px;
 }
 
 .contact-info,
@@ -447,6 +438,7 @@ footer {
 .site-map {
   margin-bottom: 15px;
   max-width: 200px;
+  text-align: center;
 }
 
 .contact-links {
@@ -461,12 +453,28 @@ footer {
   margin: 5px 0;
 }
 
+.op-hours {
+  font-size: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.op-days {
+  color: #ffffff;
+}
+
+.social-media-paragraph {
+  font-size: 1em;
+  margin-bottom: 16px;
+}
+
 .soc-media-list-footer {
   display: flex;
-  gap: 10px;
+  gap: 16px;
+  justify-content: center;
   list-style: none;
   padding: 0;
-  justify-content: center;
 }
 
 .site-map-list {
@@ -484,17 +492,16 @@ footer {
 }
 
 .map-container iframe {
+  width: 100%;
+  max-width: 600px;
+  height: 200px;
   border-radius: 8px;
 }
 
 .copy {
-  text-align: center;
   font-size: 0.9rem;
   margin-top: 10px;
-}
-
-.map-container {
-  grid-column: span 3;
+  text-align: center;
 }
 
 .soc-media-list-footer {
