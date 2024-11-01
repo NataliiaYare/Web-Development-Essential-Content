@@ -113,7 +113,7 @@ function validateForm() {
   // If the form is valid, redirect to the confirmation page
   if (isValid) {
     console.log("Form is valid. Redirecting...");
-    window.location.href = "confirmation.html"; // Redirect to confirmation page
+    window.location.href = "/confirmation_page.html"; // Redirect to confirmation page
   } else {
     console.log("Form is invalid. No redirect.");
   }
