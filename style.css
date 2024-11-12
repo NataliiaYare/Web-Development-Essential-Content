@@ -135,7 +135,6 @@ nav {
   .header-navigation {
     display: flex;
     flex-direction: row-reverse;
-    justify-content: baseline;
     padding: 10px 20px;
     background-color: #262727;
   }
