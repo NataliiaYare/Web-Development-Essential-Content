@@ -1,0 +1,36 @@
+/* Screen Styles */
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 20px;
+  color: deeppink;
+}
+
+header,
+footer,
+.print-button {
+  display: block;
+  /* Visible on screen */
+}
+
+/* Print-Specific Styles */
+@media print {
+  /* Hide elements not needed in print */
+  header,
+  footer,
+  .print-button {
+    display: none;
+  }
+
+  /* General adjustments for print readability */
+  body {
+    font-size: 14px;
+    color: black;
+  }
+
+  /* Remove backgraund colors */
+  * {
+    background: none !important;
+    color: black !important;
+  }
+}
